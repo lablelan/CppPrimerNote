@@ -33,5 +33,5 @@ markdown_extensions:
   - codehilite
   - pymdownx.mark
 
-repo_url: https://lablelan.github.io/LearningNote
+repo_url: https://lablelan.github.io/CppPrimerNote
 edit_uri: ""

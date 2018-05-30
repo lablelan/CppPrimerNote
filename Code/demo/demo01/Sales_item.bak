@@ -1,0 +1,73 @@
+#include <string>
+
+class Sales_item
+{
+public:
+	Sales_item()
+	{
+		m_isbn = "";
+		m_sale_count = 0;
+		m_ave_price = 0;
+	}
+
+	Sales_item(std::String isbn, int sale_count, int ave_price)
+	{
+		m_isbn = isbn;
+		m_sale_count = sale_count;
+		m_ave_price = ave_price;
+	}	
+	
+	~Sales_item()
+	{
+	
+	}
+
+	// OPERA	
+	Sales_item& +(Sales_item item)
+	{
+		Sales_item new_item = nullptr;
+		if (this.m_isbn == item.m_isbn)
+		{
+			new_item = Sales_item();
+			new_item.m_sale_count = this.GetSaleCount() + item.GetSaleCount();
+			new_item.m_ave_price = this.GetAvePrice() + item.GetAvePrice();
+		}
+		return new_item;
+	}
+
+
+	// GET DATA
+	std::String GetIsbn()
+	{
+		return m_isbn;
+	}
+
+	int GetSaleCount()
+	{
+		return m_sale_count;
+	}
+	
+	int GetAvePrice()
+	{
+		return m_ave_price;
+	}
+
+	// SET DATA
+	void SetIsbn(std::String isbn)
+	{
+		m_isbn = isbn;
+	}
+	void SetSaleCount(int count)
+	{
+		m_sale_count = count;
+	}
+	void SetAvePrice(int price)
+	{
+		m_ave_price = price;
+	}
+
+private:
+	std::String m_isbn;
+	int m_sale_count;
+	int m_ave_price;
+}

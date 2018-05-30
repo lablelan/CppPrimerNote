@@ -15,6 +15,13 @@ pages:
     - 2.4 const限定符: C++Primer/Chapter02/Chapter02_04.md
     - 2.5 处理类型: C++Primer/Chapter02/Chapter02_05.md
     - 2.6 自定义数据结构: C++Primer/Chapter02/Chapter02_06.md
+  - 第三章 字符串、向量和数组: 
+    - 3.1 命名空间的using声明: C++Primer/Chapter03/Chapter03_01.md
+    - 3.2 标准库类型string: C++Primer/Chapter03/Chapter03_03.md
+    - 3.3 标准库类型vector: C++Primer/Chapter03/Chapter03_03.md
+    - 3.4 迭代器介绍: C++Primer/Chapter03/Chapter03_04.md
+    - 3.5 数组: C++Primer/Chapter03/Chapter03_05.md
+    - 3.6 多维数组: C++Primer/Chapter03/Chapter03_06.md
 
 theme:
   name: 'material'

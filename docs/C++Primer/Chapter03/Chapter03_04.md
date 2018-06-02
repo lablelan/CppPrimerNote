@@ -120,4 +120,95 @@ int main()
 | iter1 - iter2 | 两个迭代器详见的结果是它们之间的距离，也就是说，将运算符右侧的迭代器向前移动差值个元素后将得到左侧的迭代器。参与运算的两个迭代器必须指向的是同一个容器中的元素或者尾元素的下一位置 |
 | >、>=、<、<= | 迭代器的关系运算符，如果某迭代器指向的容器位置在另一迭代器所指位置之前，则说明前者小于后者。参与运算的两个迭代器必须指向的是同一个容器中的元素或者尾元素的下一位置 |
 
-## 
+## 练习 3.24
+请用迭代器重做3.3.3节(第94页)的最后一个练习。
+```c++
+#include <iostream>
+#include <vector>
+
+int main()
+{
+    std::vector<int> ivec = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+    for (auto iter1 = ivec.cbegin(); iter1 != ivec.cend() - 1; ++iter1)
+    {
+        std::cout << *iter1 + *(iter1 + 1) << std::endl;
+    }
+
+    auto begin = ivec.begin();
+    auto end = ivec.end();
+    auto mid = ivec.begin() + (end - begin)/2 + (end - begin)%2;
+    //std::cout << begin + end << std::endl;    // 迭代器并没有实现+运算符
+    std::cout << end - begin << std::endl;
+    for (auto iter2 = ivec.cbegin(); iter2 != mid; ++iter2)
+    {
+        if (iter2 != end - 1)
+        {
+            std::cout << *iter2 + *(end-1) << std::endl;
+        }
+        else 
+        {
+            std::cout << *iter2 << std::endl;
+        }
+        --end;
+    }
+
+    return 0;
+}
+
+```
+
+## 练习 3.25
+3.3.3节(第93页)划分分数段的程序是使用下表运算符实现的，请利用迭代器改写该程序并实现完全相同的功能。
+```c++
+#include <iostream>
+#include <vector>
+
+int main()
+{
+    std::vector<int> ivec(11, 0);
+
+    int grade = 0;
+    while(grade != -1)
+    {
+        std::cin >> grade;
+        auto iter = ivec.begin();
+        if(grade>100 || grade < 0)
+        {
+            continue;
+        }
+        iter += grade/10;
+        std::cout << grade/10 << std::endl;
+        (*iter)++;
+    }
+
+    for (auto i : ivec)
+    {
+        std::cout << i << std::endl;
+    }
+
+    return 0;
+}
+
+```
+
+## 练习 3.26
+在100页的二分搜索程序中，为什么用的是mid = beg + (end - beg) / 2,而非mid = (beg + end) / 2;？
+因为vector迭代器没有重载迭代器+迭代器的+号运算符方法。
+```c++
+#include <iostream>
+#include <vector>
+
+//  error: no match for ‘operator+’ (operand types are ‘__gnu_cxx::__normal_iterator<int*, std::vector<int> >’ and ‘__gnu_cxx::__normal_iterator<int*, std::vector<int> >’)
+
+int main()
+{
+    std::vector<int> ivec;
+    auto beg = ivec.begin();
+    auto end = ivec.end();
+    auto mid1 = beg + (end - beg) / 2;
+    auto mid2 = (beg + end) / 2;
+
+    return 0;
+}
+
+```

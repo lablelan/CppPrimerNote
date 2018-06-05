@@ -586,6 +586,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" title="左值和右值" class="md-nav__link">
+    左值和右值
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decltype" title="decltype求值结果" class="md-nav__link">
+    decltype求值结果
+  </a>
+  
+</li>
+      
       
       
       
@@ -639,6 +653,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" title="左值和右值" class="md-nav__link">
+    左值和右值
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decltype" title="decltype求值结果" class="md-nav__link">
+    decltype求值结果
+  </a>
+  
+</li>
+      
       
       
       
@@ -659,8 +687,18 @@
                   <h1>一些概念</h1>
                 
                 <h2 id="cc">使用C++版本的C标准库头文件</h2>
-<div class="codehilite"><pre><span></span><span class="n">C</span><span class="o">++</span><span class="err">兼容</span><span class="n">C语言标准库</span><span class="err">，</span><span class="n">C语言的头文件形如name</span><span class="p">.</span><span class="n">h</span><span class="err">，</span><span class="n">C</span><span class="o">++</span><span class="err">则将这些文件命名为</span><span class="n">cname</span><span class="err">，这样更符合</span><span class="n">C</span><span class="o">++</span><span class="err">语言的要求。</span>
-<span class="err">一般来说，</span><span class="n">C</span><span class="o">++</span><span class="err">程序应该使用</span><span class="n">cname头文件而不适用name</span><span class="p">.</span><span class="n">h的形式</span><span class="err">。标准库中的名字总能在命名空间</span><span class="n">std中找到</span><span class="err">。</span>
+<p>C++兼容C语言标准库，C语言的头文件形如name.h，C++则将这些文件命名为cname，这样更符合C++语言的要求。
+一般来说，C++程序应该使用cname头文件而不适用name.h的形式。标准库中的名字总能在命名空间std中找到。</p>
+<h2 id="_1">左值和右值</h2>
+<p>右值只有两种：</p>
+<p>1.临时值。函数返回一个值就是临时值。</p>
+<p>2.字面量。</p>
+<h2 id="decltype">decltype求值结果</h2>
+<p>如果表达式的求值结果是左值，decltype作用于该表达式(不是变量)得到一个引用类型。</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kt">int</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+<span class="k">auto</span> <span class="n">decl1</span> <span class="o">=</span> <span class="k">decltype</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">);</span>      <span class="c1">// *b得到的是a变量。左值。结果是int &amp;</span>
+<span class="k">auto</span> <span class="n">decl2</span> <span class="o">=</span> <span class="k">decltype</span><span class="p">(</span><span class="o">&amp;</span><span class="n">p</span><span class="p">);</span>      <span class="c1">// &amp;p得到的是存放a的地址。字面量，右值。结果是int **</span>
 </pre></div>
                 
                   

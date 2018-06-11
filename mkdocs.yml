@@ -22,6 +22,18 @@ pages:
     - 3.4 迭代器介绍: C++Primer/Chapter03/Chapter03_04.md
     - 3.5 数组: C++Primer/Chapter03/Chapter03_05.md
     - 3.6 多维数组: C++Primer/Chapter03/Chapter03_06.md
+  - 第四章 表达式:
+    - 4.1 基础: C++Primer/Chapter04/Chapter04_01.md
+    - 4.2 算术运算符: C++Primer/Chapter04/Chapter04_02.md
+    - 4.3 逻辑和关系运算符: C++Primer/Chapter04/Chapter04_03.md
+    - 4.4 赋值运算符: C++Primer/Chapter04/Chapter04_04.md
+    - 4.5 递增和递减运算符: C++Primer/Chapter04/Chapter04_05.md
+    - 4.6 成员访问运算符: C++Primer/Chapter04/Chapter04_06.md
+    - 4.7 条件运算符: C++Primer/Chapter04/Chapter04_07.md
+    - 4.8 位运算符: C++Primer/Chapter04/Chapter04_08.md
+    - 4.9 sizeof运算符: C++Primer/Chapter04/Chapter04_09.md
+    - 4.10 逗号运算符: C++Primer/Chapter04/Chapter04_10.md
+    - 4.11 类型转换: C++Primer/Chapter04/Chapter04_11.md
   - 其他:
     - 一些概念: Other/concept.md
     - 一些细节: Other/note.md
